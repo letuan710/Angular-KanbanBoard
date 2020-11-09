@@ -39,4 +39,7 @@ export class AppComponent {
                         event.currentIndex);
     }
   }
+  deleteList(index: number){
+
+  }
 }

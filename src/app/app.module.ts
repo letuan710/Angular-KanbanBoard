@@ -5,23 +5,22 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { Column1Component } from './column1/column1.component';
-import { Column2Component } from './column2/column2.component';
-import { Column3Component } from './column3/column3.component';
-import { Column4Component } from './column4/column4.component';
+import { ListComponent } from './list/list.component';
+import { FormsModule } from '@angular/forms';
+import { DeletedialogboxComponent } from './deletedialogbox/deletedialogbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    Column1Component,
-    Column2Component,
-    Column3Component,
-    Column4Component
+    ListComponent,
+    DeletedialogboxComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,10 @@ import { Column4Component } from './column4/column4.component';
     MatListModule,
     BrowserAnimationsModule,
     DragDropModule,
-    MatButtonModule
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
