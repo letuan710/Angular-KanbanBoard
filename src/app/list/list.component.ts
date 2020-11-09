@@ -49,4 +49,8 @@ export class ListComponent implements OnInit {
   deleteTask(cardIndex: number, jobIndex: number ){
      this.jobListService.deleteTask(cardIndex, jobIndex);
   }
+
 }
+
+
+
