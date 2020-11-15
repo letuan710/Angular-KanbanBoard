@@ -33,18 +33,34 @@ export class JobListServiceService {
     { id: 3, name: 'doing', job: ['Learn HTML', 'Learn CSS'] },
   ];
 
+  saveToStorage(): void {
+    if(window && window.localStorage){
+      window.localStorage.setItem("jobList", JSON.stringify(this.jobList));
+    }
+  }
+
+  getJobLists(): JobList[] {
+    if (window && window.localStorage) {
+      this.jobList = JSON.parse(window.localStorage.getItem('jobLists')) || [];
+    }
+    return this.jobList;
+  }
+
   deleteList(jobListId: number){
-    this.jobList = this.jobList.filter((p) => p.id !== jobListId)
+    this.jobList = this.jobList.filter((p) => p.id !== jobListId);
+    this.saveToStorage();
   };
 
   deleteTask(cardIndex: number, jobIndex: number){
     // this.jobList = this.jobList[cardIndex].job.filter((p) => p.name !== jobName)
     this.jobList[cardIndex].job.splice(jobIndex,1);
-
+    this.saveToStorage();
   };
 
   addJobList( cardIndex:number, jobName: string){
      this.jobList[cardIndex].job.push(jobName);
+     this.saveToStorage();
   }
+
 
 }

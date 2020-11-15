@@ -10,13 +10,15 @@ import { JobList } from './jobListModel';
 })
 export class ListComponent implements OnInit {
 
-
+  jobLists : JobList[];
   input: String;
   inputs: string[] = [];
   // jobLists : JobList[];
   constructor(private jobListService: JobListServiceService) { }
 
   ngOnInit(): void {
+
+    this.jobLists = this.jobListService.getJobLists();
   }
 
 
